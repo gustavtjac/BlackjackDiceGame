@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.util.Random;
 import java.util.Scanner;
 
@@ -74,8 +75,29 @@ public static void main(String[] args) {
             System.out.println("Your second hit is a/an: " + playerSecondCard);
             System.out.println("Your cards total value is: " + playerSum);
             System.out.println("The dealer flipped a " + botFirstCard);
+            System.out.println("Do you want to hit or stand?");
+            System.out.println("hit = 1 stand = 2");
             if (input.nextInt()==1){
-                while ()
+                boolean hit = true;
+                Scanner input2 = new Scanner(System.in);
+                 int updatedPlayerSum = playerCardHit(playerSum);
+                System.out.println("hej");
+                while(hit){
+                    updatedPlayerSum = playerCardHit(updatedPlayerSum);
+                    if (updatedPlayerSum > 21){
+                        hit = false;
+                        System.out.println("You BUSTED!?!??!!?!??!");
+                    }else {
+                        System.out.println("Do you want to hit or stand?");
+                        System.out.println("hit = 1 stand = 2");
+                        if (input2.nextInt()==1){
+                        }
+                        else{
+                            hit = false;
+                        }
+                    }
+
+                }
             }
 
         }else {
